@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap"); /* *-*-*-* */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap'); /* Queda */
 
 :root {
 	--primary: #40e0d0;
@@ -41,11 +40,12 @@ html {
 
 .container {
 	display: inline-block;
-	background: linear-gradient(#000, var(--dark));
+	background: linear-gradient(#000, #000);
 	display: flex;
 	justify-content: space-evenly;
 	font-size: 38px;
 	align-items: center;
+	height: 65px;
 }
 
 .container.container_two .lista li a {
@@ -56,37 +56,17 @@ html {
 	color: var(--secundary);
 }
 
-.container.container_two .logo a {
-	color: var(--secundary);
-}
-
-.container.container_two .logo a:hover {
-	color: var(--primary);
-}
-
-.container.container_two .logo span {
-	color: var(--primary);
-}
-
-.container.container_two .logo span:hover {
-	color: var(--secundary);
-}
-
 .logo {
 	margin-left: 30px;
 	color: var(--primary);
-	font-family: "Redressed", cursive;
+	padding-top: 15px;
 }
-
-.logo .a {
-	color: var(--primary);
-	font-family: cursive;
+.logo-infinito img{
+	width: 50px;
+	height: 50px;
+	border-radius:  50%;
+	padding-top: 10px;
 }
-.logo span {
-	color: var(--secundary);
-	font-family: "Redressed", cursive;
-}
-
 a {
 	text-decoration: none;
 }
@@ -280,8 +260,7 @@ a {
 
 .textmi1 {
 	grid-column: 1/1;
-	/* font-family: "Courgette", cursive; */
-	font-family: "Akaya Telivigala", cursive;
+	font-family: 'Courier Prime', monospace;
 }
 
 .textmi1 p {
@@ -308,8 +287,7 @@ a {
 
 .textmi2 {
 	grid-column: 3/3;
-	/* font-family: "Courgette", cursive; */
-	font-family: "Akaya Telivigala", cursive;
+	font-family: 'Courier Prime', monospace;
 }
 
 .textmi2 p {
@@ -332,11 +310,12 @@ a {
 	width: 90%;
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .container_habilidades .card_habilidades {
 	position: relative;
-	width: 250px;
+	width: 30%;
 	background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
 	display: flex;
 	justify-content: center;
@@ -448,12 +427,12 @@ svg circle:nth-child(2) {
 }
 
 .card_habilidades:nth-child(1) svg circle:nth-child(2) {
-	stroke-dashoffset: calc(440 - (440 * 70) / 100);
+	stroke-dashoffset: calc(440 - (440 * 90) / 100);
 	stroke: var(--secundary);
 }
 
 .card_habilidades:nth-child(2) svg circle:nth-child(2) {
-	stroke-dashoffset: calc(440 - (440 * 80) / 100);
+	stroke-dashoffset: calc(440 - (440 * 85) / 100);
 	stroke: var(--primary);
 }
 
@@ -462,9 +441,24 @@ svg circle:nth-child(2) {
 	stroke: var(--secundary);
 }
 
-.card_habilidades:nth-child(4) svg circle:nth-child(2) {
+.card_habilidades:nth-child(5) svg circle:nth-child(2) {
 	stroke-dashoffset: calc(440 - (440 * 55) / 100);
 	stroke: var(--primary);
+}
+.card_habilidades:nth-child(6) svg circle:nth-child(2) {
+	stroke-dashoffset: calc(440 - (440 * 70) / 100);
+	stroke: var(--secundary);
+}
+
+.card_habilidades:nth-child(7) svg circle:nth-child(2) {
+	stroke-dashoffset: calc(440 - (440 * 80) / 100);
+	stroke: var(--primary);
+}
+
+.separador{
+	width: 100%;
+	height: 20px;
+	background: transparent;
 }
 
 /* PROYECTO */
@@ -573,6 +567,8 @@ svg circle:nth-child(2) {
 	text-transform: uppercase;
 	text-align: center;
 	text-decoration: underline;
+	font-family: 'Courier Prime', monospace;
+
 }
 
 .card_cuerpo {
@@ -582,8 +578,10 @@ svg circle:nth-child(2) {
 
 .card_cuerpo p {
 	color: var(--dark);
-	font-size: 18px;
+	font-size: 15px;
 	line-height: 1.5;
+	font-family: 'Courier Prime', monospace;
+
 }
 
 /* FOOTER/CONTACTAME */
@@ -631,10 +629,36 @@ svg circle:nth-child(2) {
 
 /* Vista desde Telefono Grande */
 
-@media (max-width: 426px) {
+@media(max-width:768px) {
 	/* Menú */
 	.navbar {
 		height: 80px;
+	}
+	.container{
+		flex-direction: column;
+	}
+	.lista{
+		display: none;
+		height: 45vh;
+	}
+	.lista li{
+		padding-bottom: 20px;
+	}
+	.logo{
+		align-self: center;
+		margin-left: 0;
+	}
+	.container.activado{
+		height: 40vh;
+	}
+	.container.activado .lista{
+		flex-direction: column;
+		align-self: center;
+		align-items: center;
+		width: 100%;
+		text-align: center;
+		
+		display: flex;
 	}
 	/* Home */
 	.home {
@@ -679,7 +703,10 @@ svg circle:nth-child(2) {
 		font-family: "Times New Roman", Times, serif;
 	}
 	/* Habilidades */
-	.container_habilidades {
-		flex-wrap: wrap;
+	.container_habilidades .card_habilidades{
+		width: 45%;
+	}
+	.separador{
+		display: none;
 	}
 }

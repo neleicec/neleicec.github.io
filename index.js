@@ -8,6 +8,17 @@ const card_jade1 = document.getElementById("card_jade1");
 const card_colono = document.getElementById("card_colono");
 const container = document.getElementById("container");
 
+const logo = document.querySelector(".logo");
+const lista = document.querySelector(".lista");
+
+logo.addEventListener("click", () => {
+	container.classList.toggle("activado");
+});
+
+lista.addEventListener("click", () => {
+	container.classList.toggle("activado");
+});
+
 card_odoo.addEventListener("click", () => {
 	card_odoo.classList.toggle("is-flipped");
 });
